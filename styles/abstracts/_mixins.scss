@@ -1,0 +1,33 @@
+@mixin clearfix {
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin photo {
+    &__photo{
+        width: 55%;
+        box-shadow: $default-box-shadow;
+        position: absolute;
+        transition: all .2s;
+        z-index: 10;
+    
+    }
+    
+}
+@mixin buttonAnima($border-radius, $padding) {
+    &:link,
+    &:visited{
+        text-transform: uppercase;
+        font-size: $default-font-size;
+        text-decoration: none;
+        padding: $padding;
+        display: inline-block;
+        border-radius: $border-radius;
+        transition: all 0.2s;
+        position: relative;
+        color: $color-grey-dark;
+        
+    }
+}

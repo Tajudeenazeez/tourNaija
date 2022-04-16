@@ -1,0 +1,31 @@
+.composition {
+    position: relative;
+    
+    @include photo;
+    &__photo {
+        outline-offset: 2rem;
+
+    }
+    &__photo--p1{
+        top: -3rem;
+        left: 0;
+    }
+    &__photo--p2{
+        top: 3rem;
+        right: 0;
+    }
+    &__photo--p3{
+        top: 10rem;
+        left: 20%;
+    }
+    &__photo:hover {
+        transform: scale(1.05)  translateY(-1rem) rotate(3deg);
+        box-shadow: $default-box-shadow;
+        z-index: 30;
+        outline: 1.5rem solid $color-primary;
+    }
+
+    &:hover &__photo:not(:hover){
+        transform: scale(0.95);
+    }
+}
