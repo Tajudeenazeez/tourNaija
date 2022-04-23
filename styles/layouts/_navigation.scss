@@ -1,0 +1,129 @@
+.navigation {
+    &__checkbox {
+        display: none;
+    }
+    &__label {
+        height: 7rem;
+        width: 7rem;
+        text-align: center;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        border-radius: 50%;
+        background-color: $color-white;
+        z-index: 2000;
+    }
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        z-index: 1000;
+        border-radius: 50%;
+        background: radial-gradient($color-primary-light, $color-primary);
+        transition: all .6s cubic-bezier(.8, .65, .75, 1);
+
+    }
+    &__navbar {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1500;
+        border-radius: 50%;
+        opacity: 0;
+        width: 0;
+        transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        // background: radial-gradient($color-primary-light, $color-primary);
+    }
+    &__list {
+        margin: 1rem;
+        
+    }
+    &__item {
+        position: fixed;
+        top: 50%;
+        right: 30%;
+        transform: translate(-50%, -50%);
+        list-style-type: none;
+        transition: all .2s;
+        
+    }
+    &__link {
+        &:link,
+        &:visited {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: $color-white;
+        font-size: 3rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+        background-size: 224%;
+        transition: all .2s;
+        }
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: $color-primary;
+            transform: translateX(1rem);
+        }
+        span{
+            margin-right: 1rem;
+            display: inline-block;
+        }
+
+    }
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+    &__checkbox:checked ~ &__navbar {
+        opacity: 1;
+        width: 100%;
+        transform: translateX(-3rem);
+    }
+
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+        transition: rotate .2s;
+        &,
+        &::after,
+        &::before {
+            width: 3rem;
+            height: 3px;
+            background-color: #333;
+            display: inline-block;
+
+        }
+        &::after,
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        &::before{top: 1rem;}
+       &::after{top: -1rem;}
+    }
+    &__label:hover &__icon::before{
+        top: -1rem;
+    }
+    &__label:hover &__icon::after{
+        top: 1rem;
+    }
+    &__checkbox:checked + &__label &__icon {
+        background: transparent;
+    }
+    &__checkbox:checked + &__label &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &__checkbox:checked + &__label &__icon::after {
+        top: 0;
+       transform: rotate(-135deg);
+    }
+}

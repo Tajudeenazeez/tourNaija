@@ -9,21 +9,25 @@
 @import "base/utilities";
 @import "base/animations";
 
-@import "components/button";
-@import "components/composition";
-@import "components/features-box";
-@import "components/card";
-@import "components/stories";
-
+@import "pages/home.scss";
 
 @import "layouts/header";
 @import "layouts/grid";
 
-@import "pages/home.scss";
+
+
+@import "components/modal";
+@import "components/button";
+@import "components/bg-video";
+@import "components/composition";
+@import "components/features-box";
+@import "components/stories";
+@import "components/card";
+@import "components/form";
 
 
 
-
+@import "layouts/navigation";
 
 
 
